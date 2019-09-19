@@ -64,7 +64,15 @@
     background-image: url('{{ site.baseurl }}/assets/textures/grey.jpg');
 
     h2 {
-        color: #999;
+        color: #6495ed;
+    }
+ 
+    .social i:hover {
+        color: #6495ed;
+    }
+
+    .post-date {
+        color: #6495ed;
     }
 }
 

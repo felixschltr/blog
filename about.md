@@ -5,7 +5,7 @@ permalink: /about/
 ---
 ## About me
 
-![Poster presentation](/path/to/image.jpg){:class="img-responsive"}
+![Poster presentation](https://github.com/felixschltr/blog/blob/gh-pages/_img/Symposium_2019.jpg){:height="251px" width="466px"}
 
 ***
 I am a Master's student in cognitive science at the [University of Tübingen](https://uni-tuebingen.de/) who is passionate about unraveling and understanding the workings of the human brain. I chose to enroll in the Master's program in cognitive science due to my interest in the computational approach to human cognition and human intelligence which I have developed while completing my Bachelor's program in psychology. I am fascinated by the way that concepts like cognitive modelling as well as concepts from the field of artificial intelligence such as machine learning (especially deep learning) can be used to create and evaluate new, more accurate models of the brain, cognition, and intelligence.

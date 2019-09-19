@@ -34,7 +34,7 @@ texture:
   social_links:
     twitter: felix_b_sch
     github:  felixschltr
-  style : [grey]
+  style : [greyblue]
   showNav: true
 
 header_pages:

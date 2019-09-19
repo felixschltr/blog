@@ -3,13 +3,13 @@
 @import 'begin';
 @import 'syntax';
 
-$linkColor: #6495ed;
+$linkColor: #b29051;
 $mobileW: 768px;
 $smallMobileW: 480px;
 $bigScreenW: 1600px;
 $leftWidth: 220px;
 
-$gray: #999;
+$gray: #535353;
 $lightGray: #eee;
 
 *,*:before,*:after {
@@ -153,7 +153,7 @@ header {
 	transition: color .3s ease;
 	margin: .1em 0;
 	&:hover {
-		color: $gray;
+		color: #c6a15b;
 		border-bottom: 0;
 	}
 }

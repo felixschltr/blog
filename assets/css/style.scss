@@ -66,13 +66,29 @@
     h2 {
         color: #8599a0;
     }
- 
+
     .social i:hover {
         color: #6495ed;
     }
 
     .post-date {
         color: #6495ed;
+    }
+}
+
+.texture-greyblue {
+    background-image: url('{{ site.baseurl }}/assets/textures/greyblue.jpg');
+
+    h2 {
+        color: #8599a0;
+    }
+
+    .social i:hover {
+        color: #c6a15b;
+    }
+
+    .post-date {
+        color: #dfd1be;
     }
 }
 

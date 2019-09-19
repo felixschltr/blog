@@ -28,7 +28,7 @@ baseurl: /blog
 
 texture:
   title: Felix B. Schlüter
-  tagline: Master's student in cognitive science at University of Tübingen.                                                                         Former student of psychology at Maastricht University.
+  tagline: Master's student of cognitive science at University of Tübingen.                                                                         Former student of psychology at Maastricht University.
   date_format: "%b %-d, %Y"
 
   social_links:

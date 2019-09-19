@@ -50,7 +50,7 @@ header_pages:
 #github_username:  felixschltr
 
 # Build settings
-theme: texture
+remote_theme: thelehhman/texture
 plugins:
   - jekyll-seo-tag
 # - jekyll-feed

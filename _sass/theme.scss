@@ -9,6 +9,8 @@ $smallMobileW: 480px;
 $bigScreenW: 1600px;
 $leftWidth: 220px;
 
+$border: #cbaa6b;
+$quote: #e6e8e6;
 $gray: #535353;
 $lightGray: #eee;
 
@@ -264,4 +266,12 @@ img[alt$="><"] {
   height: auto;
   margin: auto;
   float: none!important;
+}
+
+blockquote {
+  background-color: $quote;
+  border-left: 15px solid $border;
+	padding: 10px 10px 10px 20px;
+  letter-spacing: -1px;
+  font-style: italic;
 }

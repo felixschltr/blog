@@ -9,7 +9,7 @@ categories: academic cogsci
 ***
 
 After the first semester into my master's in cognitive science at the University of Tübingen, one thing is for sure:
-In my [previous post](% post_url /_post/2019-09-21-wind-of-change  %) I was right about my feeling that "_it's not going to be a walk in the park_"
+In my [previous post](https://felixschltr.github.io/blog/academic/math/cogsci/2019/09/21/wind-of-change.html) I was right about my feeling that "_it's not going to be a walk in the park_"
 to make the transition from psychology to cognitive science.
 
 ***

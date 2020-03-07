@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Wind of change"
+title:  "Wind of change (Part 1)"
 date:   2019-09-21 17:55:02 +0200
 categories: academic math cogsci
 ---
 ### Making the transition from a bachelor's in psychology to a master's in cognitive science
 
-It's definitely not going to be a walk in the park and (for me and most others) it requires primarily two things: catching up the math and learning how to write code.
+It's definitely not going to be a walk in the park and (for me and most others) it requires primarily two things: catching up the math and learning how to code.
 
 ***
 ## Some background
@@ -90,7 +90,7 @@ These Pre-Master programs are usually tailored to your individual 'deficiencies'
 
 __In Germany__, things are being handled a little bit different. Instead of having to complete a Pre-master program _before_ the start of the 'regular' master's program, you are able to start directly with the 'regular' master's program. Nevertheless, you are required to take additional courses to catch up on the knowledge you are lacking. While the amount of additional courses you will have to take is usually fixed, the kind of additional courses you are required to take will depend on your academic background.
 
-[Here](https://uni-tuebingen.de/index.php?eID=tx_securedownloads&p=147678&u=0&g=0&t=1569166390&hash=82276c8df9f0498f26230986ac1000b82ad69998&file=/fileadmin/Uni_Tuebingen/Fakultaeten/InfoKogni/WSI/Dokumente/Studium/Download/Modulhandbuecher/MHB_Kognitionswissenschaft_MSc_2019_06_14.pdf) is an example from the master's program in cognitive science at the University of Tübingen, Germany. The document is written in German so I will translate the important bits. On page four under the section 'organization of the program'  the document states:
+[Here](https://uni-tuebingen.de/index.php?eID=tx_securedownloads&p=147678&u=0&g=0&t=1583666555&hash=ed07ff5b445aaa5a719bd90d8e108237cb2a751a&file=/fileadmin/Uni_Tuebingen/Fakultaeten/InfoKogni/WSI/Dokumente/Studium/Download/Modulhandbuecher/MHB_Kognitionswissenschaft_MSc_2019_11_28.pdf) is an example from the master's program in cognitive science at the University of Tübingen, Germany. The document is written in German so I will translate the important bits. On page four under the section 'organization of the program'  the document states:
 
 > "Students holding a bachelor's degree in computer science, biology, psychology or linguistics are required to complete '_lateral entry_' courses (18 credits/ECTS) in addition to their compulsory courses (36 credits/ECTS)."
 

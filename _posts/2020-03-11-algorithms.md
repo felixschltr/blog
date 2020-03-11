@@ -13,6 +13,8 @@ I will update the collection of summaries/examples on this page as I progress th
 Most of the summaries/examples will be static websites created with [CodiMD](https://md.kif.rocks/), a platform to create Markdown notes.
 I currently use CodiMD a lot, as it is (still) free, supports LaTeX (+ many other features) and offers an option to download your Markdown note as a pretty-nice-looking HTML file.
 
-**My summary on:** [**Insertion ort**](\blog\codi\InsertionSort.html)
+**My summary on:** [**Insertion sort**](\blog\codi\InsertionSort.html)
+
+**My summary on:** [**Merge sort**](\blog\codi\MergeSort.html)
 
 **My summary on:** [**Solving recurrences**](\blog\codi\Recurrences.html)

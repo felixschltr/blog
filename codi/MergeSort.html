@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Merge Sort - CodiMD
+    </title>
+    <link rel="icon" type="image/png" href="https://md.kif.rocks/favicon.png">
+    <link rel="apple-touch-icon" href="https://md.kif.rocks/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.night .markdown-body blockquote{color:#bcbcbc}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.night .markdown-body h1,.night .markdown-body h2,.night .markdown-body h3,.night .markdown-body h4,.night .markdown-body h5,.night .markdown-body h6{color:#ddd}.markdown-body h1 .fa-link,.markdown-body h2 .fa-link,.markdown-body h3 .fa-link,.markdown-body h4 .fa-link,.markdown-body h5 .fa-link,.markdown-body h6 .fa-link{color:#000;vertical-align:middle;visibility:hidden;font-size:16px}.night .markdown-body h1 .fa-link,.night .markdown-body h2 .fa-link,.night .markdown-body h3 .fa-link,.night .markdown-body h4 .fa-link,.night .markdown-body h5 .fa-link,.night .markdown-body h6 .fa-link{color:#fff}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .fa-link,.markdown-body h2:hover .anchor .fa-link,.markdown-body h3:hover .anchor .fa-link,.markdown-body h4:hover .anchor .fa-link,.markdown-body h5:hover .anchor .fa-link,.markdown-body h6:hover .anchor .fa-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.night .markdown-body table tr{background-color:#5f5f5f}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.night .markdown-body table tr:nth-child(2n){background-color:#4f4f4f}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.night .markdown-body code,.night .markdown-body tt{color:#eee;background-color:hsla(0,0%,90.2%,.36)}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.night .markdown-body pre{filter:invert(100%)}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-webkit-inline-flex;display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.night .markdown-body .gist table tr:nth-child(2n){background-color:#ddd}.markdown-body code[data-gist-id]{background:none;padding:0;filter:invert(100%)}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.night .markdown-body pre.graphviz .graph>polygon{fill:#333}.night .markdown-body pre.mermaid .sectionTitle,.night .markdown-body pre.mermaid .titleText,.night .markdown-body pre.mermaid text{fill:#fff}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.night .markdown-body .abc path{fill:#eee}.night .markdown-body .abc path.note_selected{fill:##4DD0E1}.night tspan{fill:#fefefe}.night pre rect{fill:transparent}.night pre.flow-chart path,.night pre.flow-chart rect{stroke:#fff}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body img{background-color:transparent}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;-webkit-transition:opacity .2s;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;-webkit-transition:opacity .2s;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none}.ui-toc-label,.ui-toc .open .ui-toc-label{-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.night .ui-toc-dropdown .nav>li>a:focus,.night .ui-toc-dropdown .nav>li>a:hover{color:#fff;border-left-color:#fff}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.night .ui-toc-dropdown .nav>.active:focus>a,.night .ui-toc-dropdown .nav>.active:hover>a,.night .ui-toc-dropdown .nav>.active>a{color:#fff;border-left:2px solid #fff}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.night .ui-toc-dropdown .nav>li>a{color:#aaa}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}.night .navbar{background:#333;border-bottom-color:#333;color:#eee}.night .navbar a{color:#eee}.markdown-body h1[id]:before,.markdown-body h2[id]:before,.markdown-body h3[id]:before,.markdown-body h4[id]:before,.markdown-body h5[id]:before,.markdown-body h6[id]:before{display:block;content:" ";margin-top:-55px;height:55px;visibility:hidden}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.markdown-body.slides aside.notes{display:none}.markdown-body.slides ol,.markdown-body.slides ul{display:inline-block;text-align:left;margin:0 0 0 1em;padding:0}.markdown-body.slides table{width:50%;margin:0 auto;border-collapse:collapse;border-spacing:0;display:table}.markdown-body.slides table td,.markdown-body.slides table th{text-align:left;padding:.2em .5em;border:none;border-bottom:1px solid}.markdown-body.slides table tr{border-top:0;background-color:#fff}.markdown-body.slides table tr:nth-child(2n){background-color:inherit}.markdown-body.slides table tbody tr:last-child td,.markdown-body.slides table tbody tr:last-child th{border-bottom:none}.markdown-body.slides h1,.markdown-body.slides h2{border-bottom:0}.night .markdown-body.slides h1,.night .markdown-body.slides h2,.night .markdown-body.slides h3,.night .markdown-body.slides h4,.night .markdown-body.slides h5,.night .markdown-body.slides h6{color:#000}.markdown-body section>section:last-child{margin-bottom:1.5em!important}.ui-view-area.black{background-color:#000!important}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="Merge-Sort"><a class="anchor hidden-xs" href="#Merge-Sort" title="Merge-Sort"><i class="fa fa-link"></i></a>Merge Sort</h1><hr><div class="alert alert-danger">
+<p><img class="emoji" alt=":heavy_exclamation_mark:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/heavy_exclamation_mark.png"> <strong>Disclaimer</strong>:</p>
+</div><ul>
+<li>this resource is based on <strong>Chapter 2.3</strong> of the book <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition" target="_blank" rel="noopener"><em>“Introduction to Algorithms (3rd ed.)”</em></a> by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein</li>
+<li><ins>I <strong>do not</strong> claim intellectual property of the content</ins>, the following is simply <strong>a summary for personal use</strong></li>
+</ul><hr><ul>
+<li>a <strong>sorting algorithm</strong> that makes use of the <strong>"divide-and-conquer approach"</strong></li>
+</ul><h2 id="The-divide-and-conquer-approach"><a class="anchor hidden-xs" href="#The-divide-and-conquer-approach" title="The-divide-and-conquer-approach"><i class="fa fa-link"></i></a>The divide-and-conquer approach</h2><div class="alert alert-info">
+<p><strong><ins>General approach</ins></strong>:</p>
+<ul>
+<li><strong>Divide</strong>: break down the problem into several <strong>smaller subproblems</strong>, that are similar to the original problem</li>
+<li><strong>Conquer</strong>: solve the subproblems <strong>recursively</strong></li>
+<li><strong>Combine</strong>: combine their solutions to solve the original problem</li>
+</ul>
+</div><div class="alert alert-success">
+<ul>
+<li><strong>Advantage</strong>: running time is often easily determined</li>
+</ul>
+</div><h2 id="Structure-of-Merge-Sort"><a class="anchor hidden-xs" href="#Structure-of-Merge-Sort" title="Structure-of-Merge-Sort"><i class="fa fa-link"></i></a>Structure of Merge Sort</h2><p><strong><ins>Divide</ins></strong>:</p><ul>
+<li>Divide the <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>n</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.771em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.615em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.966em, 1000.6em, 2.726em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math; font-style: italic;">n</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.076em; border-left: 0px solid; width: 0px; height: 0.678em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">n</script></span>-element sequence to be sorted into <strong>two subsequences</strong> of <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>n</mi><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>/</mo></mrow><mn>2</mn></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-4" style="width: 1.949em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.588em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.658em, 1001.54em, 2.965em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mi" id="MathJax-Span-6" style="font-family: MathJax_Math; font-style: italic;">n</span><span class="texatom" id="MathJax-Span-7"><span class="mrow" id="MathJax-Span-8"><span class="mo" id="MathJax-Span-9" style="font-family: MathJax_Main;">/</span></span></span><span class="mn" id="MathJax-Span-10" style="font-family: MathJax_Main;">2</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.368em; border-left: 0px solid; width: 0px; height: 1.345em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>2</mn></math></span></span><script type="math/tex" id="MathJax-Element-2">n/2</script></span> elements each</li>
+</ul><p><strong><ins>Conquer</ins></strong>:</p><ul>
+<li>Sort the two subsequences <strong>recursively</strong> using Merge Sort</li>
+</ul><div class="alert alert-danger">
+<p><img class="emoji" alt=":heavy_exclamation_mark:" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/heavy_exclamation_mark.png"> The recursion <strong>terminates</strong>, when each sequence to be sorted has <strong>length 1</strong> and therefore is already in sorted order</p>
+</div><p><strong><ins>Combine</ins></strong>:</p><ul>
+<li>Merge the two sorted subsequences to solve the overall sorting problem</li>
+</ul><hr><h3 id="The-‘Merge’-subprocedure"><a class="anchor hidden-xs" href="#The-‘Merge’-subprocedure" title="The-‘Merge’-subprocedure"><i class="fa fa-link"></i></a>The ‘Merge’ subprocedure</h3><ul>
+<li><code>A</code> is an array and <code>left</code>, <code>middle</code> and <code>right</code> are indices of the array <code>A</code>, such that <code>left</code> <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-462-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo>&amp;#x2264;</mo></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1361" style="width: 0.976em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.768em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.721em, 1000.68em, 2.802em, -1000em); top: -2.51em; left: 0em;"><span class="mrow" id="MathJax-Span-1362"><span class="mo" id="MathJax-Span-1363" style="font-family: MathJax_Main;">≤</span></span><span style="display: inline-block; width: 0px; height: 2.51em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.231em; border-left: 0px solid; width: 0px; height: 1.069em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></span></span><script type="math/tex" id="MathJax-Element-462">\leq</script></span> <code>middle</code> <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-463-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo>&amp;lt;</mo></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1364" style="width: 0.976em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.768em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.817em, 1000.68em, 2.704em, -1000em); top: -2.51em; left: 0em;"><span class="mrow" id="MathJax-Span-1365"><span class="mo" id="MathJax-Span-1366" style="font-family: MathJax_Main;">&lt;</span></span><span style="display: inline-block; width: 0px; height: 2.51em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.111em; border-left: 0px solid; width: 0px; height: 0.833em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo></math></span></span><script type="math/tex" id="MathJax-Element-463"><</script></span> <code>right</code></li>
+<li>the procedure <strong>assumes</strong> that the subarrays A[<code>left</code>…<code>middle</code>] and A[<code>middle</code>+1…<code>right</code>] <mark>are already in <strong>sorted order</strong></mark></li>
+<li>since we perform <strong>at most <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-464-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>n</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1367" style="width: 0.771em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.615em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.966em, 1000.6em, 2.726em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-1368"><span class="mi" id="MathJax-Span-1369" style="font-family: MathJax_Math; font-style: italic;">n</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.076em; border-left: 0px solid; width: 0px; height: 0.678em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></span></span><script type="math/tex" id="MathJax-Element-464">n</script></span> basic steps</strong>, the ‘Merge’ subprocedure takes time <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-465-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi mathvariant=&quot;normal&quot;>&amp;#x0398;</mi><mo stretchy=&quot;false&quot;>(</mo><mi>n</mi><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1370" style="width: 2.666em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.152em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.658em, 1002.06em, 2.965em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-1371"><span class="mi" id="MathJax-Span-1372" style="font-family: MathJax_Main;">Θ</span><span class="mo" id="MathJax-Span-1373" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-1374" style="font-family: MathJax_Math; font-style: italic;">n</span><span class="mo" id="MathJax-Span-1375" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.368em; border-left: 0px solid; width: 0px; height: 1.345em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-465">\Theta(n)</script></span></li>
+</ul><pre><code class="java hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span></div><div class="code"><span class="hljs-comment">// auxiliary procedure for merging two sorted subarrays</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] A, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> middle, <span class="hljs-keyword">int</span> right)</span> </span>{
+    <span class="hljs-comment">//determine the size of the two temporary subarrays</span>
+    <span class="hljs-keyword">int</span> n1 = middle - left + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> n2 = right - middle;
+    <span class="hljs-comment">//initialize two new temporary subarrays</span>
+    <span class="hljs-keyword">int</span>[] Left = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n1];
+    <span class="hljs-keyword">int</span>[] Right = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n2];
+    <span class="hljs-comment">//copy data to the newly created temporary subarrays</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n1; i++) {
+        Left[i] = A[left + i];
+    }
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n2; j++) {
+        Right[j] = A[middle + (j + <span class="hljs-number">1</span>)];
+    }
+    <span class="hljs-comment">//initialize indices of temporary subarrays</span>
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">/*
+    initialize the index of the array that is created by merging
+    the two temporary subarrays
+    */</span>
+    <span class="hljs-keyword">int</span> k = left;
+    <span class="hljs-comment">//merge the two temporary subarrays</span>
+    <span class="hljs-keyword">while</span>( i &lt; n1 &amp;&amp; j &lt; n2) {
+        <span class="hljs-keyword">if</span> (Left[i] &lt;= Right[j]) {
+            A[k] = Left[i];
+            i++;
+        }
+        <span class="hljs-keyword">else</span> {
+            A[k] = Right[j];
+            j++;
+        }
+        k++;
+    }
+    <span class="hljs-comment">/*
+    in the case that one of the temporary subarrays is empty,
+    simply add the remaining elements of the other subarray
+     */</span>
+    <span class="hljs-keyword">while</span>(i &lt; n1){
+        A[k] = Left[i];
+        i++;
+        k++;
+    }
+    <span class="hljs-keyword">while</span> (j &lt; n2) {
+        A[k] = Right[j];
+        j++;
+        k++;
+    }
+}
+</div></div></code></pre><h3 id="The-main-‘Merge-Sort’-procedure"><a class="anchor hidden-xs" href="#The-main-‘Merge-Sort’-procedure" title="The-main-‘Merge-Sort’-procedure"><i class="fa fa-link"></i></a>The main ‘Merge Sort’ procedure</h3><ul>
+<li>this procedure sorts the elements in the array subarray A[<code>left</code>…<code>right</code>]</li>
+<li>if <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-659-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>p</mi><mo>&amp;#x2265;</mo><mi>r</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-2214" style="width: 2.82em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.305em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.772em, 1002.28em, 2.909em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-2215"><span class="mi" id="MathJax-Span-2216" style="font-family: MathJax_Math; font-style: italic;">p</span><span class="mo" id="MathJax-Span-2217" style="font-family: MathJax_Main; padding-left: 0.278em;">≥</span><span class="mi" id="MathJax-Span-2218" style="font-family: MathJax_Math; font-style: italic; padding-left: 0.278em;">r</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.299em; border-left: 0px solid; width: 0px; height: 1.138em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi><mo>≥</mo><mi>r</mi></math></span></span><script type="math/tex" id="MathJax-Element-659">p \geq r</script></span>, the subarray has <strong>at most one element</strong> and is therefore <strong>already sorted</strong></li>
+<li>to sort the <strong>entire array</strong> <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-660-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>A</mi></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-2219" style="width: 0.976em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.768em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.692em, 1000.74em, 2.715em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-2220"><span class="mi" id="MathJax-Span-2221" style="font-family: MathJax_Math; font-style: italic;">A</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.063em; border-left: 0px solid; width: 0px; height: 0.999em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi></math></span></span><script type="math/tex" id="MathJax-Element-660">A</script></span>, we make the initial call <code>MergeSort(A,0,A.length-1)</code></li>
+</ul><pre><code class="java hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span></div><div class="code"><span class="hljs-comment">//main function to sort the whole original array</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] A, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span> </span>{
+    <span class="hljs-keyword">if</span>(left &lt; right){
+        <span class="hljs-comment">// find the middle element of the array</span>
+        <span class="hljs-keyword">int</span> middle = (left + right) / <span class="hljs-number">2</span>;
+        <span class="hljs-comment">//recursively sort first half of array</span>
+        MergeSort(A, left, middle);
+        <span class="hljs-comment">//recursively sort second half of array</span>
+        MergeSort(A, (middle + <span class="hljs-number">1</span>), right);
+        <span class="hljs-comment">//call to Merge() method to merge the two sorted subarrays</span>
+        Merge(A, left, middle, right);
+    }
+}
+</div></div></code></pre><hr><h3 id="Example"><a class="anchor hidden-xs" href="#Example" title="Example"><i class="fa fa-link"></i></a>Example</h3><ul>
+<li><ins>Input Array (unsorted)</ins>: <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1438-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>A</mi><mo stretchy=&quot;false&quot;>[</mo><mn>3</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>0</mn><mo>,</mo><mo>&amp;#x2212;</mo><mn>99</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>1</mn><mo stretchy=&quot;false&quot;>]</mo></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13437" style="width: 14.193em; display: inline-block;"><span style="display: inline-block; position: relative; width: 11.629em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.658em, 1011.51em, 2.965em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-13438"><span class="mi" id="MathJax-Span-13439" style="font-family: MathJax_Math; font-style: italic;">A</span><span class="mo" id="MathJax-Span-13440" style="font-family: MathJax_Main;">[</span><span class="mn" id="MathJax-Span-13441" style="font-family: MathJax_Main;">3</span><span class="mo" id="MathJax-Span-13442" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13443" style="font-family: MathJax_Main; padding-left: 0.167em;">15</span><span class="mo" id="MathJax-Span-13444" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13445" style="font-family: MathJax_Main; padding-left: 0.167em;">0</span><span class="mo" id="MathJax-Span-13446" style="font-family: MathJax_Main;">,</span><span class="mo" id="MathJax-Span-13447" style="font-family: MathJax_Main; padding-left: 0.167em;">−</span><span class="mn" id="MathJax-Span-13448" style="font-family: MathJax_Main;">99</span><span class="mo" id="MathJax-Span-13449" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13450" style="font-family: MathJax_Main; padding-left: 0.167em;">4</span><span class="mo" id="MathJax-Span-13451" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13452" style="font-family: MathJax_Main; padding-left: 0.167em;">2</span><span class="mo" id="MathJax-Span-13453" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13454" style="font-family: MathJax_Main; padding-left: 0.167em;">8</span><span class="mo" id="MathJax-Span-13455" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13456" style="font-family: MathJax_Main; padding-left: 0.167em;">10</span><span class="mo" id="MathJax-Span-13457" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13458" style="font-family: MathJax_Main; padding-left: 0.167em;">1</span><span class="mo" id="MathJax-Span-13459" style="font-family: MathJax_Main;">]</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.368em; border-left: 0px solid; width: 0px; height: 1.345em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo stretchy="false">[</mo><mn>3</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>0</mn><mo>,</mo><mo>−</mo><mn>99</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></math></span></span><script type="math/tex" id="MathJax-Element-1438">A[3,15,0,-99,4,2,8,10,1]</script></span></li>
+<li><strong>blue nodes</strong> represent the recursive calls of the <code>MergeSort()</code> procedure, which splits the array into subarrays of <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1439-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>n</mi><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>/</mo></mrow><mn>2</mn></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13460" style="width: 1.949em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.588em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.658em, 1001.54em, 2.965em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-13461"><span class="mi" id="MathJax-Span-13462" style="font-family: MathJax_Math; font-style: italic;">n</span><span class="texatom" id="MathJax-Span-13463"><span class="mrow" id="MathJax-Span-13464"><span class="mo" id="MathJax-Span-13465" style="font-family: MathJax_Main;">/</span></span></span><span class="mn" id="MathJax-Span-13466" style="font-family: MathJax_Main;">2</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.368em; border-left: 0px solid; width: 0px; height: 1.345em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>2</mn></math></span></span><script type="math/tex" id="MathJax-Element-1439">n/2</script></span>
+<ul>
+<li>the recursive calls of <code>MergeSort()</code> terminate, when <code>left</code><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1440-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo>&amp;#x2265;</mo></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13467" style="width: 0.976em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.768em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.721em, 1000.68em, 2.802em, -1000em); top: -2.51em; left: 0em;"><span class="mrow" id="MathJax-Span-13468"><span class="mo" id="MathJax-Span-13469" style="font-family: MathJax_Main;">≥</span></span><span style="display: inline-block; width: 0px; height: 2.51em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.231em; border-left: 0px solid; width: 0px; height: 1.069em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≥</mo></math></span></span><script type="math/tex" id="MathJax-Element-1440">\geq</script></span><code>right</code>, i.e. when the subarrays contain at most <strong>one element</strong></li>
+</ul>
+</li>
+<li><strong>brown nodes</strong> represent the recursive calls of the <code>Merge()</code> procedure, which combines subarrays to produce larger sorted subarrays</li>
+<li><ins>Output Array (sorted)</ins>: <span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1441-Frame" tabindex="0" style="position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>A</mi><mo stretchy=&quot;false&quot;>[</mo><mo>&amp;#x2212;</mo><mn>99</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>15</mn><mo stretchy=&quot;false&quot;>]</mo></math>" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13470" style="width: 14.193em; display: inline-block;"><span style="display: inline-block; position: relative; width: 11.629em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.658em, 1011.51em, 2.965em, -1000em); top: -2.561em; left: 0em;"><span class="mrow" id="MathJax-Span-13471"><span class="mi" id="MathJax-Span-13472" style="font-family: MathJax_Math; font-style: italic;">A</span><span class="mo" id="MathJax-Span-13473" style="font-family: MathJax_Main;">[</span><span class="mo" id="MathJax-Span-13474" style="font-family: MathJax_Main;">−</span><span class="mn" id="MathJax-Span-13475" style="font-family: MathJax_Main;">99</span><span class="mo" id="MathJax-Span-13476" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13477" style="font-family: MathJax_Main; padding-left: 0.167em;">0</span><span class="mo" id="MathJax-Span-13478" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13479" style="font-family: MathJax_Main; padding-left: 0.167em;">1</span><span class="mo" id="MathJax-Span-13480" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13481" style="font-family: MathJax_Main; padding-left: 0.167em;">2</span><span class="mo" id="MathJax-Span-13482" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13483" style="font-family: MathJax_Main; padding-left: 0.167em;">3</span><span class="mo" id="MathJax-Span-13484" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13485" style="font-family: MathJax_Main; padding-left: 0.167em;">4</span><span class="mo" id="MathJax-Span-13486" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13487" style="font-family: MathJax_Main; padding-left: 0.167em;">8</span><span class="mo" id="MathJax-Span-13488" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13489" style="font-family: MathJax_Main; padding-left: 0.167em;">10</span><span class="mo" id="MathJax-Span-13490" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-13491" style="font-family: MathJax_Main; padding-left: 0.167em;">15</span><span class="mo" id="MathJax-Span-13492" style="font-family: MathJax_Main;">]</span></span><span style="display: inline-block; width: 0px; height: 2.561em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.368em; border-left: 0px solid; width: 0px; height: 1.345em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo stretchy="false">[</mo><mo>−</mo><mn>99</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>15</mn><mo stretchy="false">]</mo></math></span></span><script type="math/tex" id="MathJax-Element-1441">A[-99,0,1,2,3,4,8,10,15]</script></span></li>
+</ul><pre class="graphviz"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="766pt" height="632pt" viewBox="0.00 0.00 766.00 631.72" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 627.7214)">
+<title>hierarchy</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-627.7214 762,-627.7214 762,4 -4,4"></polygon>
+<!-- A1 -->
+<g id="node1" class="node">
+<title>A1</title>
+<ellipse fill="none" stroke="#000000" cx="359.2652" cy="-602.7911" rx="135.0735" ry="20.861"></ellipse>
+<text text-anchor="middle" x="359.2652" y="-597.3911" font-family="Times,serif" font-size="18.00" fill="#000000">A[3,15,0,-99,4,2,8,10,1]</text>
+</g>
+<!-- L1 -->
+<g id="node2" class="node">
+<title>L1</title>
+<ellipse fill="none" stroke="#0000ff" cx="276.2652" cy="-527.8607" rx="70.0732" ry="18"></ellipse>
+<text text-anchor="middle" x="276.2652" y="-523.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[3,15,0,-99,4]</text>
+</g>
+<!-- A1&#45;&gt;L1 -->
+<g id="edge1" class="edge">
+<title>A1-&gt;L1</title>
+<path fill="none" stroke="#000000" d="M336.1451,-581.9188C325.8779,-572.6499 313.7299,-561.6829 303.068,-552.0577"></path>
+<polygon fill="#000000" stroke="#000000" points="305.3834,-549.4327 295.6153,-545.3296 300.6927,-554.6286 305.3834,-549.4327"></polygon>
+</g>
+<!-- R1 -->
+<g id="node11" class="node">
+<title>R1</title>
+<ellipse fill="none" stroke="#0000ff" cx="479.2652" cy="-527.8607" rx="55.0836" ry="18"></ellipse>
+<text text-anchor="middle" x="479.2652" y="-523.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[2,8,10,1]</text>
+</g>
+<!-- A1&#45;&gt;R1 -->
+<g id="edge2" class="edge">
+<title>A1-&gt;R1</title>
+<path fill="none" stroke="#000000" d="M392.0557,-582.316C408.333,-572.1522 427.9998,-559.8718 444.5342,-549.5474"></path>
+<polygon fill="#000000" stroke="#000000" points="446.7278,-552.304 453.3563,-544.0388 443.0203,-546.3665 446.7278,-552.304"></polygon>
+</g>
+<!-- LL1 -->
+<g id="node3" class="node">
+<title>LL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="145.2652" cy="-455.8607" rx="47.5158" ry="18"></ellipse>
+<text text-anchor="middle" x="145.2652" y="-451.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[3,15,0]</text>
+</g>
+<!-- L1&#45;&gt;LL1 -->
+<g id="edge3" class="edge">
+<title>L1-&gt;LL1</title>
+<path fill="none" stroke="#000000" d="M246.5393,-511.5228C227.293,-500.9447 202.1025,-487.0995 181.6599,-475.8639"></path>
+<polygon fill="#000000" stroke="#000000" points="183.0893,-472.6557 172.6398,-470.9063 179.7176,-478.7903 183.0893,-472.6557"></polygon>
+</g>
+<!-- RL1 -->
+<g id="node8" class="node">
+<title>RL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="276.2652" cy="-455.8607" rx="44.0415" ry="18"></ellipse>
+<text text-anchor="middle" x="276.2652" y="-451.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[-99,4]</text>
+</g>
+<!-- L1&#45;&gt;RL1 -->
+<g id="edge4" class="edge">
+<title>L1-&gt;RL1</title>
+<path fill="none" stroke="#000000" d="M276.2652,-509.6921C276.2652,-501.9917 276.2652,-492.8351 276.2652,-484.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="279.7653,-484.274 276.2652,-474.274 272.7653,-484.274 279.7653,-484.274"></polygon>
+</g>
+<!-- LLL1 -->
+<g id="node4" class="node">
+<title>LLL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="40.2652" cy="-383.8607" rx="40.0317" ry="18"></ellipse>
+<text text-anchor="middle" x="40.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[3,15]</text>
+</g>
+<!-- LL1&#45;&gt;LLL1 -->
+<g id="edge7" class="edge">
+<title>LL1-&gt;LLL1</title>
+<path fill="none" stroke="#000000" d="M122.2225,-440.06C107.2474,-429.7914 87.5447,-416.2809 71.2105,-405.0804"></path>
+<polygon fill="#000000" stroke="#000000" points="72.7607,-401.8995 62.534,-399.1308 68.8019,-407.6726 72.7607,-401.8995"></polygon>
+</g>
+<!-- RLL1 -->
+<g id="node7" class="node">
+<title>RLL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="145.2652" cy="-383.8607" rx="28.9715" ry="18"></ellipse>
+<text text-anchor="middle" x="145.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[0]</text>
+</g>
+<!-- LL1&#45;&gt;RLL1 -->
+<g id="edge8" class="edge">
+<title>LL1-&gt;RLL1</title>
+<path fill="none" stroke="#000000" d="M145.2652,-437.6921C145.2652,-429.9917 145.2652,-420.8351 145.2652,-412.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="148.7653,-412.274 145.2652,-402.274 141.7653,-412.274 148.7653,-412.274"></polygon>
+</g>
+<!-- LLLL1 -->
+<g id="node5" class="node">
+<title>LLLL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="28.2652" cy="-311.8607" rx="28.3893" ry="18"></ellipse>
+<text text-anchor="middle" x="28.2652" y="-307.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[3]</text>
+</g>
+<!-- LLL1&#45;&gt;LLLL1 -->
+<g id="edge15" class="edge">
+<title>LLL1-&gt;LLLL1</title>
+<path fill="none" stroke="#000000" d="M37.2371,-365.6921C35.9339,-357.8732 34.3806,-348.553 32.9355,-339.8828"></path>
+<polygon fill="#000000" stroke="#000000" points="36.3472,-339.0626 31.2508,-329.7741 29.4424,-340.2135 36.3472,-339.0626"></polygon>
+</g>
+<!-- RLLL1 -->
+<g id="node6" class="node">
+<title>RLLL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="126.2652" cy="-311.8607" rx="33.6266" ry="18"></ellipse>
+<text text-anchor="middle" x="126.2652" y="-307.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[15]</text>
+</g>
+<!-- LLL1&#45;&gt;RLLL1 -->
+<g id="edge16" class="edge">
+<title>LLL1-&gt;RLLL1</title>
+<path fill="none" stroke="#000000" d="M59.3514,-367.8816C71.3994,-357.7949 87.12,-344.6335 100.296,-333.6024"></path>
+<polygon fill="#000000" stroke="#000000" points="102.6947,-336.1589 108.1155,-327.0558 98.2011,-330.7916 102.6947,-336.1589"></polygon>
+</g>
+<!-- A2 -->
+<g id="node18" class="node">
+<title>A2</title>
+<ellipse fill="none" stroke="#a52a2a" cx="123.2652" cy="-239.8607" rx="41.1748" ry="18"></ellipse>
+<text text-anchor="middle" x="123.2652" y="-235.6607" font-family="Times,serif" font-size="14.00" fill="#a52a2a">A[3,15]</text>
+</g>
+<!-- LLLL1&#45;&gt;A2 -->
+<g id="edge17" class="edge">
+<title>LLLL1-&gt;A2</title>
+<path fill="none" stroke="#000000" d="M46.5821,-297.9784C60.0481,-287.7726 78.623,-273.6948 94.1185,-261.9509"></path>
+<polygon fill="#000000" stroke="#000000" points="96.5026,-264.5356 102.3583,-255.706 92.2745,-258.9568 96.5026,-264.5356"></polygon>
+</g>
+<!-- RLLL1&#45;&gt;A2 -->
+<g id="edge18" class="edge">
+<title>RLLL1-&gt;A2</title>
+<path fill="none" stroke="#000000" d="M125.5082,-293.6921C125.1873,-285.9917 124.8058,-276.8351 124.4492,-268.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="127.9458,-268.1196 124.0324,-258.274 120.9518,-268.4111 127.9458,-268.1196"></polygon>
+</g>
+<!-- A3 -->
+<g id="node19" class="node">
+<title>A3</title>
+<ellipse fill="none" stroke="#a52a2a" cx="219.2652" cy="-167.8607" rx="48.6598" ry="18"></ellipse>
+<text text-anchor="middle" x="219.2652" y="-163.6607" font-family="Times,serif" font-size="14.00" fill="#a52a2a">A[0,3,15]</text>
+</g>
+<!-- RLL1&#45;&gt;A3 -->
+<g id="edge20" class="edge">
+<title>RLL1-&gt;A3</title>
+<path fill="none" stroke="#000000" d="M157.3533,-367.0615C164.3033,-356.7457 172.7266,-343.0262 178.2652,-329.8607 197.1661,-284.9325 208.9173,-229.2013 214.7625,-196.1974"></path>
+<polygon fill="#000000" stroke="#000000" points="218.2835,-196.3715 216.5201,-185.9245 211.3837,-195.191 218.2835,-196.3715"></polygon>
+</g>
+<!-- LRL1 -->
+<g id="node9" class="node">
+<title>LRL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="246.2652" cy="-383.8607" rx="36.4761" ry="18"></ellipse>
+<text text-anchor="middle" x="246.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[-99]</text>
+</g>
+<!-- RL1&#45;&gt;LRL1 -->
+<g id="edge9" class="edge">
+<title>RL1-&gt;LRL1</title>
+<path fill="none" stroke="#000000" d="M268.8495,-438.063C265.46,-429.9282 261.3694,-420.1108 257.6061,-411.0789"></path>
+<polygon fill="#000000" stroke="#000000" points="260.7766,-409.5879 253.6996,-401.7033 254.315,-412.2802 260.7766,-409.5879"></polygon>
+</g>
+<!-- RRL1 -->
+<g id="node10" class="node">
+<title>RRL1</title>
+<ellipse fill="none" stroke="#0000ff" cx="347.2652" cy="-383.8607" rx="28.9715" ry="18"></ellipse>
+<text text-anchor="middle" x="347.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[4]</text>
+</g>
+<!-- RL1&#45;&gt;RRL1 -->
+<g id="edge10" class="edge">
+<title>RL1-&gt;RRL1</title>
+<path fill="none" stroke="#000000" d="M292.7325,-439.1615C302.2261,-429.5341 314.2981,-417.2921 324.6692,-406.7749"></path>
+<polygon fill="#000000" stroke="#000000" points="327.3299,-409.0615 331.8592,-399.4836 322.3456,-404.1465 327.3299,-409.0615"></polygon>
+</g>
+<!-- A4 -->
+<g id="node20" class="node">
+<title>A4</title>
+<ellipse fill="none" stroke="#a52a2a" cx="335.2652" cy="-311.8607" rx="44.6039" ry="18"></ellipse>
+<text text-anchor="middle" x="335.2652" y="-307.6607" font-family="Times,serif" font-size="14.00" fill="#a52a2a">A[-99,4]</text>
+</g>
+<!-- LRL1&#45;&gt;A4 -->
+<g id="edge21" class="edge">
+<title>LRL1-&gt;A4</title>
+<path fill="none" stroke="#000000" d="M265.5769,-368.2378C277.6853,-358.4422 293.5037,-345.6453 307.0086,-334.72"></path>
+<polygon fill="#000000" stroke="#000000" points="309.4913,-337.2134 315.0645,-328.2029 305.0887,-331.7713 309.4913,-337.2134"></polygon>
+</g>
+<!-- RRL1&#45;&gt;A4 -->
+<g id="edge22" class="edge">
+<title>RRL1-&gt;A4</title>
+<path fill="none" stroke="#000000" d="M344.2371,-365.6921C342.9537,-357.9917 341.4276,-348.8351 340.0013,-340.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="343.4305,-339.5625 338.3341,-330.274 336.5258,-340.7134 343.4305,-339.5625"></polygon>
+</g>
+<!-- LR1 -->
+<g id="node12" class="node">
+<title>LR1</title>
+<ellipse fill="none" stroke="#0000ff" cx="479.2652" cy="-455.8607" rx="35.3735" ry="18"></ellipse>
+<text text-anchor="middle" x="479.2652" y="-451.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[2,8]</text>
+</g>
+<!-- R1&#45;&gt;LR1 -->
+<g id="edge5" class="edge">
+<title>R1-&gt;LR1</title>
+<path fill="none" stroke="#000000" d="M479.2652,-509.6921C479.2652,-501.9917 479.2652,-492.8351 479.2652,-484.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="482.7653,-484.274 479.2652,-474.274 475.7653,-484.274 482.7653,-484.274"></polygon>
+</g>
+<!-- RR1 -->
+<g id="node15" class="node">
+<title>RR1</title>
+<ellipse fill="none" stroke="#0000ff" cx="631.2652" cy="-455.8607" rx="40.6129" ry="18"></ellipse>
+<text text-anchor="middle" x="631.2652" y="-451.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[10,1]</text>
+</g>
+<!-- R1&#45;&gt;RR1 -->
+<g id="edge6" class="edge">
+<title>R1-&gt;RR1</title>
+<path fill="none" stroke="#000000" d="M510.7597,-512.9423C534.971,-501.4738 568.4864,-485.598 594.0267,-473.5"></path>
+<polygon fill="#000000" stroke="#000000" points="595.8497,-476.5093 603.3888,-469.0653 592.8531,-470.1832 595.8497,-476.5093"></polygon>
+</g>
+<!-- LLR1 -->
+<g id="node13" class="node">
+<title>LLR1</title>
+<ellipse fill="none" stroke="#0000ff" cx="440.2652" cy="-383.8607" rx="28.3893" ry="18"></ellipse>
+<text text-anchor="middle" x="440.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[2]</text>
+</g>
+<!-- LR1&#45;&gt;LLR1 -->
+<g id="edge11" class="edge">
+<title>LR1-&gt;LLR1</title>
+<path fill="none" stroke="#000000" d="M469.8244,-438.4315C465.2255,-429.9414 459.5988,-419.5536 454.4934,-410.1281"></path>
+<polygon fill="#000000" stroke="#000000" points="457.4595,-408.2553 449.6191,-401.1294 451.3044,-411.5893 457.4595,-408.2553"></polygon>
+</g>
+<!-- RLR1 -->
+<g id="node14" class="node">
+<title>RLR1</title>
+<ellipse fill="none" stroke="#0000ff" cx="533.2652" cy="-383.8607" rx="28.9715" ry="18"></ellipse>
+<text text-anchor="middle" x="533.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[8]</text>
+</g>
+<!-- LR1&#45;&gt;RLR1 -->
+<g id="edge12" class="edge">
+<title>LR1-&gt;RLR1</title>
+<path fill="none" stroke="#000000" d="M492.0624,-438.7977C498.8849,-429.7011 507.3988,-418.3493 514.9133,-408.3298"></path>
+<polygon fill="#000000" stroke="#000000" points="517.7315,-410.4057 520.9315,-400.3056 512.1314,-406.2056 517.7315,-410.4057"></polygon>
+</g>
+<!-- A5 -->
+<g id="node21" class="node">
+<title>A5</title>
+<ellipse fill="none" stroke="#a52a2a" cx="506.2652" cy="-311.8607" rx="36.5173" ry="18"></ellipse>
+<text text-anchor="middle" x="506.2652" y="-307.6607" font-family="Times,serif" font-size="14.00" fill="#a52a2a">A[2,8]</text>
+</g>
+<!-- LLR1&#45;&gt;A5 -->
+<g id="edge23" class="edge">
+<title>LLR1-&gt;A5</title>
+<path fill="none" stroke="#000000" d="M454.5862,-368.2378C463.2504,-358.786 474.4759,-346.5399 484.2502,-335.877"></path>
+<polygon fill="#000000" stroke="#000000" points="486.8763,-338.1919 491.0535,-328.4552 481.7162,-333.4618 486.8763,-338.1919"></polygon>
+</g>
+<!-- RLR1&#45;&gt;A5 -->
+<g id="edge24" class="edge">
+<title>RLR1-&gt;A5</title>
+<path fill="none" stroke="#000000" d="M526.591,-366.063C523.5405,-357.9282 519.859,-348.1108 516.472,-339.0789"></path>
+<polygon fill="#000000" stroke="#000000" points="519.7446,-337.8376 512.9561,-329.7033 513.1903,-340.2955 519.7446,-337.8376"></polygon>
+</g>
+<!-- LRR1 -->
+<g id="node16" class="node">
+<title>LRR1</title>
+<ellipse fill="none" stroke="#0000ff" cx="631.2652" cy="-383.8607" rx="33.045" ry="18"></ellipse>
+<text text-anchor="middle" x="631.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">L[10]</text>
+</g>
+<!-- RR1&#45;&gt;LRR1 -->
+<g id="edge13" class="edge">
+<title>RR1-&gt;LRR1</title>
+<path fill="none" stroke="#000000" d="M631.2652,-437.6921C631.2652,-429.9917 631.2652,-420.8351 631.2652,-412.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="634.7653,-412.274 631.2652,-402.274 627.7653,-412.274 634.7653,-412.274"></polygon>
+</g>
+<!-- RRR1 -->
+<g id="node17" class="node">
+<title>RRR1</title>
+<ellipse fill="none" stroke="#0000ff" cx="729.2652" cy="-383.8607" rx="28.9715" ry="18"></ellipse>
+<text text-anchor="middle" x="729.2652" y="-379.6607" font-family="Times,serif" font-size="14.00" fill="#0000ff">R[1]</text>
+</g>
+<!-- RR1&#45;&gt;RRR1 -->
+<g id="edge14" class="edge">
+<title>RR1-&gt;RRR1</title>
+<path fill="none" stroke="#000000" d="M652.5297,-440.2378C667.0642,-429.5594 686.4531,-415.3145 702.1045,-403.8155"></path>
+<polygon fill="#000000" stroke="#000000" points="704.3742,-406.4911 710.3607,-397.7497 700.2296,-400.8499 704.3742,-406.4911"></polygon>
+</g>
+<!-- A6 -->
+<g id="node22" class="node">
+<title>A6</title>
+<ellipse fill="none" stroke="#a52a2a" cx="631.2652" cy="-311.8607" rx="41.1748" ry="18"></ellipse>
+<text text-anchor="middle" x="631.2652" y="-307.6607" font-family="Times,serif" font-size="14.00" fill="#a52a2a">A[1,10]</text>
+</g>
+<!-- LRR1&#45;&gt;A6 -->
+<g id="edge25" class="edge">
+<title>LRR1-&gt;A6</title>
+<path fill="none" stroke="#000000" d="M631.2652,-365.6921C631.2652,-357.9917 631.2652,-348.8351 631.2652,-340.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="634.7653,-340.274 631.2652,-330.274 627.7653,-340.274 634.7653,-340.274"></polygon>
+</g>
+<!-- RRR1&#45;&gt;A6 -->
+<g id="edge26" class="edge">
+<title>RRR1-&gt;A6</title>
+<path fill="none" stroke="#000000" d="M710.3698,-369.9784C696.2552,-359.6085 676.6996,-345.2411 660.5638,-333.3862"></path>
+<polygon fill="#000000" stroke="#000000" points="662.6156,-330.5506 652.4845,-327.4504 658.471,-336.1918 662.6156,-330.5506"></polygon>
+</g>
+<!-- A2&#45;&gt;A3 -->
+<g id="edge19" class="edge">
+<title>A2-&gt;A3</title>
+<path fill="none" stroke="#000000" d="M144.0958,-224.2378C157.2798,-214.3498 174.5413,-201.4036 189.1977,-190.4113"></path>
+<polygon fill="#000000" stroke="#000000" points="191.5757,-193.0029 197.4757,-184.2029 187.3756,-187.4029 191.5757,-193.0029"></polygon>
+</g>
+<!-- A7 -->
+<g id="node23" class="node">
+<title>A7</title>
+<ellipse fill="none" stroke="#a52a2a" cx="335.2652" cy="-95.8607" rx="71.2172" ry="18"></ellipse>
+<text text-anchor="middle" x="335.2652" y="-91.6607" font-family="Times,serif" font-size="14.00" fill="#a52a2a">A[-99,0,3,4,15]</text>
+</g>
+<!-- A3&#45;&gt;A7 -->
+<g id="edge27" class="edge">
+<title>A3-&gt;A7</title>
+<path fill="none" stroke="#000000" d="M244.4355,-152.2378C260.4369,-142.3058 281.4094,-129.2885 299.1696,-118.2649"></path>
+<polygon fill="#000000" stroke="#000000" points="301.4703,-120.9563 308.121,-112.7088 297.7788,-115.0088 301.4703,-120.9563"></polygon>
+</g>
+<!-- A4&#45;&gt;A7 -->
+<g id="edge28" class="edge">
+<title>A4-&gt;A7</title>
+<path fill="none" stroke="#000000" d="M335.2652,-293.8162C335.2652,-256.2545 335.2652,-169.4148 335.2652,-124.271"></path>
+<polygon fill="#000000" stroke="#000000" points="338.7653,-124.0058 335.2652,-114.0058 331.7653,-124.0058 338.7653,-124.0058"></polygon>
+</g>
+<!-- A8 -->
+<g id="node24" class="node">
+<title>A8</title>
+<ellipse fill="none" stroke="#a52a2a" cx="506.2652" cy="-239.8607" rx="55.6456" ry="18"></ellipse>
+<text text-anchor="middle" x="506.2652" y="-235.6607" font-family="Times,serif" font-size="14.00" fill="#a52a2a">A[1,2,8,10]</text>
+</g>
+<!-- A5&#45;&gt;A8 -->
+<g id="edge29" class="edge">
+<title>A5-&gt;A8</title>
+<path fill="none" stroke="#000000" d="M506.2652,-293.6921C506.2652,-285.9917 506.2652,-276.8351 506.2652,-268.2774"></path>
+<polygon fill="#000000" stroke="#000000" points="509.7653,-268.274 506.2652,-258.274 502.7653,-268.274 509.7653,-268.274"></polygon>
+</g>
+<!-- A6&#45;&gt;A8 -->
+<g id="edge30" class="edge">
+<title>A6-&gt;A8</title>
+<path fill="none" stroke="#000000" d="M606.27,-297.4635C588.0237,-286.9536 563.0099,-272.5457 542.5639,-260.7688"></path>
+<polygon fill="#000000" stroke="#000000" points="544.2362,-257.6929 533.8239,-255.7345 540.7423,-263.7587 544.2362,-257.6929"></polygon>
+</g>
+<!-- A9 -->
+<g id="node25" class="node">
+<title>A9</title>
+<ellipse fill="none" stroke="#000000" cx="398.2652" cy="-20.9304" rx="135.0735" ry="20.861"></ellipse>
+<text text-anchor="middle" x="398.2652" y="-15.5304" font-family="Times,serif" font-size="18.00" fill="#000000">A[-99,0,1,2,3,4,8,10,15]</text>
+</g>
+<!-- A7&#45;&gt;A9 -->
+<g id="edge31" class="edge">
+<title>A7-&gt;A9</title>
+<path fill="none" stroke="#000000" d="M350.1953,-78.1033C357.3589,-69.5831 366.1209,-59.1619 374.1928,-49.5614"></path>
+<polygon fill="#000000" stroke="#000000" points="377.0041,-51.6563 380.7606,-41.7498 371.6462,-47.1515 377.0041,-51.6563"></polygon>
+</g>
+<!-- A8&#45;&gt;A9 -->
+<g id="edge32" class="edge">
+<title>A8-&gt;A9</title>
+<path fill="none" stroke="#000000" d="M497.4271,-221.9447C478.9433,-184.4756 436.0286,-97.4819 413.1896,-51.1842"></path>
+<polygon fill="#000000" stroke="#000000" points="416.1997,-49.3746 408.6367,-41.9549 409.922,-52.4715 416.1997,-49.3746"></polygon>
+</g>
+</g>
+</svg>
+</pre><hr><h2 id="Analysis-of-Merge-Sort"><a class="anchor hidden-xs" href="#Analysis-of-Merge-Sort" title="Analysis-of-Merge-Sort"><i class="fa fa-link"></i></a>Analysis of Merge Sort</h2></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#Merge-Sort" title="Merge Sort">Merge Sort</a><ul class="nav">
+<li><a href="#The-divide-and-conquer-approach" title="The divide-and-conquer approach">The divide-and-conquer approach</a></li>
+<li><a href="#Structure-of-Merge-Sort" title="Structure of Merge Sort">Structure of Merge Sort</a><ul class="nav">
+<li><a href="#The-‘Merge’-subprocedure" title="The ‘Merge’ subprocedure">The ‘Merge’ subprocedure</a></li>
+<li><a href="#The-main-‘Merge-Sort’-procedure" title="The main ‘Merge Sort’ procedure">The main ‘Merge Sort’ procedure</a></li>
+<li><a href="#Example" title="Example">Example</a></li>
+</ul>
+</li>
+<li><a href="#Analysis-of-Merge-Sort" title="Analysis of Merge Sort">Analysis of Merge Sort</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#Merge-Sort" title="Merge Sort">Merge Sort</a><ul class="nav">
+<li><a href="#The-divide-and-conquer-approach" title="The divide-and-conquer approach">The divide-and-conquer approach</a></li>
+<li><a href="#Structure-of-Merge-Sort" title="Structure of Merge Sort">Structure of Merge Sort</a><ul class="nav">
+<li><a href="#The-‘Merge’-subprocedure" title="The ‘Merge’ subprocedure">The ‘Merge’ subprocedure</a></li>
+<li><a href="#The-main-‘Merge-Sort’-procedure" title="The main ‘Merge Sort’ procedure">The main ‘Merge Sort’ procedure</a></li>
+<li><a href="#Example" title="Example">Example</a></li>
+</ul>
+</li>
+<li><a href="#Analysis-of-Merge-Sort" title="Analysis of Merge Sort">Analysis of Merge Sort</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>

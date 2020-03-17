@@ -18,3 +18,5 @@ I currently use CodiMD a lot, as it is (still) free, supports LaTeX (+ many othe
 **My summary on:** [**Merge sort**](\blog\codi\MergeSort.html)
 
 **My summary on:** [**Solving recurrences**](\blog\codi\Recurrences.html)
+
+**My summary on**: [**Solving recurrences by using induction**](\blog\codi\Recurrences_Induction.html)

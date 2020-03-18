@@ -19,4 +19,4 @@ I currently use CodiMD a lot, as it is (still) free, supports LaTeX (+ many othe
 
 **My summary on:** [**Solving recurrences**](\blog\codi\Recurrences.html)
 
-**My summary on**: [**Solving recurrences by using induction**](\blog\codi\Recurrences_induction.html)
+**My summary on**: [**Solving recurrences using induction**](\blog\codi\Recurrences_induction.html)

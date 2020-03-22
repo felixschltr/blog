@@ -13,10 +13,18 @@ I will update the collection of summaries/examples on this page as I progress th
 Most of the summaries/examples will be static websites created with [CodiMD](https://md.kif.rocks/), a platform to create Markdown notes.
 I currently use CodiMD a lot, as it is (still) free, supports LaTeX (+ many other features) and offers an option to download your Markdown note as a pretty-nice-looking HTML file.
 
-**My summary on:** [**Insertion sort**](\blog\codi\InsertionSort.html)
+### Basics
 
-**My summary on:** [**Merge sort**](\blog\codi\MergeSort.html)
++ [**Insertion sort**](\blog\codi\InsertionSort.html)
 
-**My summary on:** [**Solving recurrences**](\blog\codi\Recurrences.html)
++ [**Merge sort**](\blog\codi\MergeSort.html)
 
-**My summary on**: [**Solving recurrences using induction**](\blog\codi\Recurrences_induction.html)
++ [**Solving recurrences**](\blog\codi\Recurrences.html)
+
++ [**Solving recurrences using induction**](\blog\codi\Recurrences_induction.html)
+
+### Searching & Sorting
+
++ [**Searching in sorted sets**](\blog\codi\Searching _in_sorted_sets.html)
+
++ [**Sorting (Part I)**](\blog\codi\Sorting_Part_I.html)

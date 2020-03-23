@@ -5,7 +5,7 @@ date:   2019-09-29 22:45:02 +0200
 categories: Linux OS Ubuntu-18.04.3-LTS setup essentials
 ---
 
-### For two years I'm running Ubuntu Linux and I haven't looked back since. These are the resources I need for my everyday Linux experience.
+### The resources I need for my personal Linux experience.
 
 Before I made the transition to Linux approximately two years ago, I was running Windows 10 as my main OS. And guess what, I was completely fed-up with it. The constant updates had taken up all the space on my SSD. It got to the point that I had no space left to install the newest ones. My laptop was slowly dying, getting slower day by day and the worst thing about it: there was seemingly nothing I could do. So many times had I uninstalled and deleted stuff to have just enough space for the new updates and it had already dawned on me that this strategy will not work forever. I was right. It was about time to think about an alternative.
 

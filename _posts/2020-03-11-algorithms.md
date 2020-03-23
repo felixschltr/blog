@@ -28,3 +28,5 @@ I currently use CodiMD a lot, as it is (still) free, supports LaTeX (+ many othe
 + [**Searching in sorted sets**](\blog\codi\Searching _in_sorted_sets.html)
 
 + [**Sorting (Part I)**](\blog\codi\Sorting_Part_I.html)
+
++ [**Sorting (Part II)**](\blog\codi\Sorting_Part_II.html)

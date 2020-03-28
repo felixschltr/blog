@@ -5,7 +5,7 @@ permalink: /about/
 ---
 ## About me
 
-![img_01.png](/blog/assets/images/img_01.png)
+![img_01.png ><](/blog/assets/images/img_01.png)
 
 I am a Master's student of cognitive science at the [University of Tübingen](https://uni-tuebingen.de/) who is passionate about unraveling and understanding the workings of the human brain. I chose to enroll in the Master's program in cognitive science due to my interest in the computational approach to human cognition and human intelligence which has developed during my Bachelor's program in psychology. I am fascinated by the way in which concepts from computer science (especially machine learning) can be used to create and evaluate new, more accurate models of the brain, cognition, and intelligence.
 

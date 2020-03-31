@@ -4,7 +4,7 @@ title:  "Diving into algorithms"
 date:   2020-03-11 15:26:02 +0200
 categories: academic cogsci
 ---
-### My resources for my algorithms class
+### Resources for my algorithms class
 
 As you may already guess, most of the summaries/examples will be based on the book [Introduction to Algorithms (3rd ed.)](https://mitpress.mit.edu/books/introduction-algorithms-third-edition) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein. Partly, they will also be based on the slides provided by my professor which, however, are also mostly based on the book.
 

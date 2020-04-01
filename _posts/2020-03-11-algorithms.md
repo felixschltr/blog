@@ -30,3 +30,5 @@ I currently use CodiMD a lot, as it is (still) free, supports LaTeX (+ many othe
 + [**Sorting (Part I)**](\blog\codi\Sorting_Part_I.html)
 
 + [**Sorting (Part II): Heapsort**](\blog\codi\Sorting_Part_II.html)
+
++ [**Sorting (Part III): Quicksort**](\blog\codi\Sorting_Part_III.html)

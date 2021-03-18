@@ -4,7 +4,7 @@ title: "Algo summaries"
 date: 2020-03-11 15:26:02
 categories: algorithms class CS
 ---
-### Some summaries for my class on algorithm.
+### Some summaries for my class on algorithms.
 
 Most of this content is based on the book [Introduction to Algorithms (3rd ed.)](https://mitpress.mit.edu/books/introduction-algorithms-third-edition){:target="\_blank"} by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein.
 
